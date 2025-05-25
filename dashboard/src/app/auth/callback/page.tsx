@@ -5,11 +5,11 @@ import { useRouter } from "next/navigation";
 
 export default function AuthCallbackPage() {
   const router = useRouter();
-  const backendBaseUrl = process.env.NEXT_PUBLIC_BACKEND_URL || "http://127.0.0.1:8787";
+  const backendBaseUrl = process.env.NEXT_PUBLIC_BACKEND_URL;
 
   useEffect(() => {
     
-    fetch("http://127.0.0.1:8787/auth/token", {
+    fetch(`${backendBaseUrl}/auth/token`, {
       credentials: "include", 
     })
       .then(res => res.json())

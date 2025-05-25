@@ -13,7 +13,7 @@ export function LoginForm({
 }: React.ComponentPropsWithoutRef<"form">) {
   const router = useRouter();
 
-  const backendBaseUrl = process.env.NEXT_PUBLIC_BACKEND_URL || "http://127.0.0.1:8787";
+  const backendBaseUrl = process.env.NEXT_PUBLIC_BACKEND_URL;
 
   const handleOAuthLogin = (provider: string) => {
     window.location.href = `${backendBaseUrl}/auth/${provider}`;
